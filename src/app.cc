@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 	MainWindow mainWindow;
 	mainWindow.show();
 
-	win_sparkle_set_appcast_url("");
+	win_sparkle_set_appcast_url("https://code.aliyun.com/zzk_dev/SparkleDemo/blob/master/doc/appcast.xml");
 	win_sparkle_set_app_details(L"insta360.com", L"Sparkle Demo App", L"1.0.0");
 	win_sparkle_set_dsa_pub_pem(reinterpret_cast<const char*>(QResource(":/key/dsa_pub.pem").data()));
 
