@@ -1,7 +1,9 @@
 #include "mainwindow.hpp"
 
 #include "ui_main_window.h"
+#ifdef Q_OS_WIN
 #include "winsparkle.h"
+#endif
 
 MainWindow::MainWindow(QWidget* parent) 
 	: ui(new Ui::MainWindow){
@@ -11,7 +13,9 @@ MainWindow::MainWindow(QWidget* parent)
 }
 
 void MainWindow::onCheckUpdatesTriggered() {
+#ifdef Q_OS_WIN
 	win_sparkle_check_update_with_ui();
+#endif
 }
 
 MainWindow::~MainWindow() {

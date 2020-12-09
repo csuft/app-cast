@@ -27,6 +27,11 @@ SET(ALL_SOURCE_FILES
 	${FORMS}
 )
 
+IF (APPLE)
+  FILE(GLOB MAC "${CMAKE_CURRENT_SOURCE_DIR}/src/mac/*")
+  LIST(APPEND ALL_SOURCE_FILES ${MAC})
+ENDIF()
+
 #################################################################################
 # Compile target 
 ADD_EXECUTABLE (${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${ALL_SOURCE_FILES}) 
@@ -50,10 +55,12 @@ IF(WIN32)
   )
 ELSE() 
   FIND_LIBRARY(FOUNDATION Foundation)
-  FIND_LIBRARY(COREFOUNDATION CoreFoundation)
+  FIND_LIBRARY(SPARKLE Sparkle)
+  FIND_LIBRARY(APPKIT AppKit)
   SET(DEPENDENCY_LIBS 
 	${FOUNDATION} 
-	${COREFOUNDATION}
+  ${APPKIT}
+  ${SPARKLE}
   )
 ENDIF()
 
@@ -61,6 +68,7 @@ TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE
   Qt5::Widgets
   Qt5::Core
   Qt5::Gui
+  ${DEPENDENCY_LIBS}
 )
 
 string(TIMESTAMP time "%Y-%m-%d %H:%M:%S")
