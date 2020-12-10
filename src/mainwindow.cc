@@ -3,6 +3,8 @@
 #include "ui_main_window.h"
 #ifdef Q_OS_WIN
 #include "winsparkle.h"
+#else
+#include "mac/SparkleAutoUpdater.h"
 #endif
 
 MainWindow::MainWindow(QWidget* parent) 
@@ -15,6 +17,11 @@ MainWindow::MainWindow(QWidget* parent)
 void MainWindow::onCheckUpdatesTriggered() {
 #ifdef Q_OS_WIN
 	win_sparkle_check_update_with_ui();
+#else
+    auto updater = new SparkleAutoUpdater("http://0.0.0.0:8000/appcast.xml");
+    if (updater) {
+        updater->checkForUpdates();
+    }
 #endif
 }
 

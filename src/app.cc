@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
 	win_sparkle_set_dsa_pub_pem(reinterpret_cast<const char*>(QResource(":/key/dsa_pub.pem").data()));
 #else
     CocoaInitializer initializer;
-    auto updater = new SparkleAutoUpdater("https://raw.githubusercontent.com/csuft/app-cast/master/doc/appcast.xml");
+    auto updater = new SparkleAutoUpdater("http://0.0.0.0:8000/appcast.xml");
     if (updater) {
         updater->checkForUpdates();
     }
