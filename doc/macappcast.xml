@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>Nova Studio</title>
+        <description>Bug fixes and new features for Nova Studio</description>
+        <language>en</language>
+        <item>
+            <title>Version 1.1.0</title>
+            <description><![CDATA[ <ul> <li>Bug fixes for exporting</li> <li>Improvement for color plus while previewing</li> <li>Added ProRes encoding support</li> <li>Added high frame rate exporting support</li> </ul> ]]></description>
+            <description xml:lang="zh_CN"><![CDATA[ <ul> <li>提升性能</li> <li>提升性能</li> <li>提升性能</li> <li>提升性能</li> </ul> ]]></description>
+
+            <pubDate>Fri, 06 Feb 2016 22:49:00 +0100</pubDate>
+            <enclosure 
+                       os="macos"
+                       url="http://0.0.0.0:8000/SparkleDemo.zip"
+                       sparkle:edSignature="89RKUNh5nrVQUbfCCddr+zBz0LpDG8Cilq+rZian/t/GaTbGmTjejgAs4ztdZtG6kk6BV8va3sKp2pkfEAXFCQ==" 
+                       length="20223"
+                       sparkle:version="1.1.0"
+                       type="application/octet-stream" />
+            <sparkle:minimumSystemVersion>10.12.0</sparkle:minimumSystemVersion>
+        </item>
+    </channel>
+</rss>
